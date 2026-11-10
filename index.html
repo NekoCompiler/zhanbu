@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0b08">
+<title>玄机排盘 · 梅花易数占事应期</title>
+<meta name="description" content="依梅花易数、周易六十四卦、阴阳五行与洛书九宫地气，推演所愿之事的成事概率与天定应期。">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+
+  <header class="head">
+    <div class="seal">易</div>
+    <div class="head-txt">
+      <h1>玄机排盘</h1>
+      <p>梅花易数 · 六十四卦 · 阴阳五行 · 洛书九宫</p>
+    </div>
+  </header>
+
+  <div class="clock-box">
+    <span class="clock-label">观气时刻 · 系统实时</span>
+    <span id="clock" class="clock">—</span>
+  </div>
+
+  <form id="form" class="panel">
+    <div class="panel-title"><i></i>立盘信息<span>凡七项，缺一不占</span></div>
+
+    <div class="field">
+      <label for="name">姓 名 <em>字气数理</em></label>
+      <input id="name" type="text" maxlength="20" placeholder="请输入姓名" autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label>生 日 <em>年龄自动推得</em></label>
+      <div class="triple">
+        <select id="bYear" aria-label="出生年"></select>
+        <select id="bMonth" aria-label="出生月"></select>
+        <select id="bDay" aria-label="出生日"></select>
+      </div>
+      <div class="age-line">周岁 · <b id="ageOut">—</b></div>
+    </div>
+
+    <div class="field">
+      <label for="gender">性 别 <em>本命阴阳</em></label>
+      <select id="gender">
+        <option value="男">男 · 阳命</option>
+        <option value="女">女 · 阴命</option>
+        <option value="其他">其他 · 依生年干定</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>出生地 <em>来龙祖气</em></label>
+      <div class="double">
+        <select id="birthProvince" aria-label="出生省份"></select>
+        <select id="birthCity" aria-label="出生城市"></select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>所在地 <em>坐向磁场</em></label>
+      <div class="double">
+        <select id="currProvince" aria-label="所在省份"></select>
+        <select id="currCity" aria-label="所在城市"></select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="wish">所 求 <em>事由语义爻动</em></label>
+      <input id="wish" type="text" maxlength="60" placeholder="如：找到女朋友 / 今年上岸 / 项目通过">
+    </div>
+
+    <button id="castBtn" type="submit" class="cast-btn">
+      <span>起 卦</span><small>以此时天地气数排盘</small>
+    </button>
+  </form>
+
+  <section id="result" class="result" hidden>
+
+    <div class="panel-title"><i></i>占断总纲</div>
+    <div class="hero">
+      <div id="ring" class="ring"><div class="ring-in"><span id="pNum" class="pnum">—</span><small>事成概率</small></div></div>
+      <div class="hero-txt">
+        <div class="wish-line">所 求 · <b id="wishEcho">—</b></div>
+        <p id="verdict" class="verdict">—</p>
+      </div>
+    </div>
+
+    <div class="panel-title"><i></i>命盘根基</div>
+    <div id="metaGrid" class="meta-grid"></div>
+
+    <div class="panel-title"><i></i>卦象排盘<span>本卦 · 变卦 · 互卦</span></div>
+    <div id="guaRow" class="gua-row"></div>
+
+    <div class="panel-title"><i></i>推演明细<span>逐项气数增减</span></div>
+    <div id="details" class="details"></div>
+    <p id="rawLine" class="raw-line"></p>
+
+    <div class="panel-title"><i></i>天定应期<span>精准至年月日时</span></div>
+    <div id="dateGrid" class="date-grid"></div>
+
+    <div class="foot-note">
+      起卦取浏览器所在系统之真实时刻，同一输入于同一时刻起卦结果恒定；时刻一移，卦气即转。<br>
+      本盘为传统术数模型的文化演示与娱乐推演，不构成任何现实决策依据。
+    </div>
+  </section>
+
+  <footer class="site-foot">一念起卦 · 气数自见</footer>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
